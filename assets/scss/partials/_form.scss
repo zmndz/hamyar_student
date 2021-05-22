@@ -1,0 +1,131 @@
+.form {
+
+  &__input {
+
+    &:focus {
+      border-color: rgba($color: $yellow-color, $alpha: 0.5) !important;
+      border: 1px solid #fbdc8c;
+      box-shadow: 0 0 0 1px rgba($color: $yellow-color, $alpha: 0.2);
+    }
+
+    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: rgb(170, 170, 170);
+      opacity: 1; /* Firefox */
+    }
+    
+    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color: rgb(170, 170, 170);
+    }
+    
+    &::-ms-input-placeholder { /* Microsoft Edge */
+      color: rgb(170, 170, 170);
+    }
+
+    &--invalid {
+      border-color: rgba($color: $red-color, $alpha: 0.5) !important;
+
+      &:focus {
+        border-color: rgba($color: $red-color, $alpha: 0.5) !important;
+        box-shadow: 0 0 0 0.2rem rgba($color: $red-color, $alpha: 0.5) !important;
+      }
+
+      &-message {
+        color: $red-color;
+        font-size: 0.75rem;
+      }
+    }
+  }
+
+  &__select {
+    background: #fff url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat left 0.75rem center/8px 10px;
+    padding: 0.375rem 0.75rem 0.375rem 1.75rem;
+    cursor: pointer;
+    
+    &:hover {
+      border-color: #999999;
+    }
+
+    &:focus {
+      border-color: rgba($color: $yellow-color, $alpha: 0.5) !important;
+      border: 1px solid #fbdc8c;
+      box-shadow: 0 0 0 1px rgba($color: $yellow-color, $alpha: 0.2);
+    }
+
+    &--invalid {
+      border-color: rgba($color: $red-color, $alpha: 0.5) !important;
+
+      &:focus {
+        border-color: rgba($color: $red-color, $alpha: 0.5) !important;
+        box-shadow: 0 0 0 0.2rem rgba($color: $red-color, $alpha: 0.5) !important;
+      }
+
+      &-message {
+        color: $red-color;
+        font-size: 0.75rem;
+        display: flex;
+        text-align: right;
+      }
+    }
+  }
+
+  &__dropdown {
+    padding: 0;
+    text-decoration: none !important;
+
+    &:focus {
+      border-color: rgba($color: $yellow-color, $alpha: 0.5) !important;
+      box-shadow: none !important;
+      border: 2px solid #fbdc8c;
+      // box-shadow: 0 0 0 1px rgba($color: $yellow-color, $alpha: 0.2);
+    }
+
+    &--item {
+
+      &:active {
+        background-color: $yellow-color !important;
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 2px #fff;
+        border-radius: 6px;
+        outline: none;
+      }
+    }
+
+    &--icon {
+      font-size: 2rem;
+      width: 32px;
+      height: 32px;
+      color: $purple-color;
+      text-align: center;
+      line-height: 34px;
+      border: none !important;
+
+      &:hover {
+        color: darken($purple-color, 10%);
+      }
+
+      &:focus {
+        box-shadow: none !important;
+      }  
+    }
+
+    &--menu {
+      text-align: right;
+    }
+
+    &--link {
+      a {
+        &:active {
+          background-color: $yellow-color !important;
+        }
+
+        &:focus {
+          box-shadow: 0 0 0 2px #fff;
+          outline: none;
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,8 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 91" width="1440" height="91">
+	<title>Rectangle 3-svg</title>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #1893fe } 
+	</style>
+	<path id="Layer" class="shp0" d="M0 -831L1440 -831L1440 50.66C1440 50.66 1266 -40.1 720 50.66C174 141.42 0 50.66 0 50.66L0 -831Z" />
+</svg>

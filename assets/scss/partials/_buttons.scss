@@ -1,0 +1,201 @@
+.button:not(.button--disabled):not(.button--disabled) {
+  cursor: pointer;
+}
+.button {
+  border-radius: 4px;
+  color: #fff;
+  box-shadow: 0 3px 6px -3px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  border: none;
+  outline: none;
+  line-height: 1.5;
+  padding: 8px 12px;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  // margin: 8px;
+  // cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &--yellow {
+    background-color: $yellow-color;
+
+    &:hover {
+      background-color: darken($yellow-color, 5%);
+    }
+    &:active {
+      background-color: darken($yellow-color, 7%);
+    }
+  }
+  &--green {
+    background-color: $green-color;
+
+    &:hover {
+      background-color: darken($green-color, 5%);
+    }
+    &:active {
+      background-color: darken($green-color, 7%);
+    }
+  }
+  &--blue {
+    background-color: $blue-color;
+
+    &:hover {
+      background-color: darken($blue-color, 5%);
+    }
+    &:active {
+      background-color: darken($blue-color, 7%);
+    }
+  }
+  &--purple {
+    background-color: $purple-color;
+
+    &:hover {
+      background-color: darken($purple-color, 5%);
+    }
+    &:active {
+      background-color: darken($purple-color, 7%);
+    }
+  }
+  &--red {
+    background-color: $red-color;
+
+    &:hover {
+      background-color: darken($red-color, 5%);
+    }
+    &:active {
+      background-color: darken($red-color, 7%);
+    }
+  }
+  &--gray {
+    background-color: $gray-color;
+
+    &:hover {
+      background-color: darken($gray-color, 5%);
+    }
+    &:active {
+      background-color: darken($gray-color, 7%);
+    }
+  }
+
+  &--outline--yellow {
+    background-color: #fff;
+    color: $yellow-color;
+    border: 1px solid $yellow-color;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: $yellow-color;
+      color: #fff;
+      border: 1px solid $yellow-color;
+    }
+    &:active {
+      background-color: darken($yellow-color, 5%);
+      color: #fff;
+      border: 1px solid $yellow-color;
+    }
+  }
+  &--outline--green {
+    background-color: #fff;
+    color: $green-color;
+    border: 1px solid $green-color;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: $green-color;
+      color: #fff;
+    }
+    &:active {
+      background-color: darken($green-color, 5%);
+      color: #fff;
+    }
+  }
+  &--outline--blue {
+    background-color: #fff;
+    color: $blue-color;
+    border: 1px solid $blue-color;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: $blue-color;
+      color: #fff;
+    }
+    &:active {
+      background-color: darken($blue-color, 5%);
+      color: #fff;
+    }
+  }
+  &--outline--purple {
+    background-color: #fff;
+    color: $purple-color;
+    border: 1px solid $purple-color;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: $purple-color;
+      color: #fff;
+    }
+    &:active {
+      background-color: darken($purple-color, 5%);
+      color: #fff;
+    }
+  }
+  &--outline--red {
+    background-color: #fff;
+    color: $red-color;
+    border: 1px solid $red-color;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: $red-color;
+      color: #fff;
+    }
+    &:active {
+      background-color: darken($red-color, 5%);
+      color: #fff;
+    }
+  }
+  &--outline--gray {
+    background-color: #fff;
+    color: $gray-color;
+    border: 1px solid $gray-color;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: $gray-color;
+      color: #fff;
+    }
+    &:active {
+      background-color: darken($gray-color, 5%);
+      color: #fff;
+    }
+  }
+
+  &--small {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+  &--medium {
+  }
+  &--large {
+    padding: 8px 16px;
+    font-size: 1.25rem;
+  }
+
+  &--no-shadow {
+    box-shadow: none!important;
+  }
+  &--disabled {
+    background-color: rgba(0,0,0,.12)!important;
+    color: rgba(0,0,0,.26)!important;
+    border: none!important;
+    cursor: default!important;
+  }
+  &--block {
+    display: block;
+    width: 100%;
+  }
+}

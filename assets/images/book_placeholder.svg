@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 148" width="100" height="148">
+	<defs>
+		<linearGradient id="grd1" gradientUnits="userSpaceOnUse"  x1="26" y1="124" x2="74" y2="76">
+			<stop offset="0" stop-color="#adadad"  />
+			<stop offset="1" stop-color="#e5e5e5"  />
+		</linearGradient>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #0076bc } 
+		.shp1 { fill: #e5c8a0 } 
+		.shp2 { fill: url(#grd1) } 
+	</style>
+	<rect width="100" height="148" id="Layer 1" style="fill: #cce7d6" />
+	<path id="Shape 2" class="shp0" d="M24.5 0L41.5 26.5C41.5 26.5 26.33 34.16 26.5 34C26.67 33.84 35.5 48.5 35.5 48.5C35.5 48.5 21.42 55.66 21.5 55.5C21.58 55.34 0 22.5 0 22.5L0 0L24.5 0Z" />
+	<path id="Shape 3" class="shp1" d="M28.5 0L46.5 27.5L32 35L41.5 50.5L73.5 35.5L51.5 0L28.5 0Z" />
+	<path id="Shape 6" class="shp2" d="M13 76L87 76L87 124L13 124L13 76Z" />
+	<path id="Shape 7" class="shp0" d="M87 127L100 127L100 133.5L87 133.5L87 127Z" />
+	<path id="Shape 7 copy" class="shp1" d="M87 134.5L100 134.5L100 141L87 141L87 134.5Z" />
+</svg>
