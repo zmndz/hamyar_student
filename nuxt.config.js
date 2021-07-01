@@ -11,7 +11,13 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-    ]
+    ],
+    script: [
+      // { type: 'text/javascript', src: 'https://polyfill.io/v3/polyfill.min.js?features=es6', body: true, }, // Insert in body
+      // { type: 'text/javascript', src: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js?config=TeX-AMS_HTML-full&locale=fa', body: true, async: true, id:'MathJax-script'}, // Insert in body
+      // { type: 'text/javascript', src: 'https://www.monta.ir/mathjax/MathJax.js?config=TeX-AMS_HTML-full&locale=fa', body: true, async: true, id:'MathJax-script'}, // Insert in body
+      { type: 'text/javascript', src: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML-full&locale=fa', body: true, async: true, id:'MathJax-script'}, // Insert in body
+    ],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -22,7 +28,8 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     { src: '@/plugins/interceptor', mode: 'client' },
-    { src: '@/plugins/vue-text-highlight' },
+    { src: "@/plugins/crisp.js", mode: "client" },
+    { src: "@/plugins/googleanalytics.js", mode: "client" },
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -32,6 +39,7 @@ export default {
   buildModules: [
     '@nuxtjs/pwa',
   ],
+
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
@@ -110,7 +118,7 @@ export default {
 
   loading: {
     name: 'chasing-dots',
-    color: '#FDBC11',
+    color: '#1893fe',
     background: 'white',
     height: '2px'
   },
@@ -136,7 +144,7 @@ export default {
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
-    baseURL: process.env.VUE_APP_BASE_URL || 'https://csnaapp.ir/api/v1'
+    baseURL: process.env.VUE_APP_BASE_URL || 'https://api.vfind.ir/api/v1'
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)

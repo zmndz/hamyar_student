@@ -22,10 +22,10 @@ export function setCacheData(title, data) {
   localStorage.setItem(title, data);
 }
 
-// export function getCacheData(title) {
-//   let cachedData = JSON.parse(localStorage.getItem(title));
-//   return cachedData;
-// }
+export function getCacheData(title) {
+  let cachedData = localStorage.getItem(title);
+  return cachedData;
+}
 
 export function clearCacheData(title, data) {
   localStorage.clear();

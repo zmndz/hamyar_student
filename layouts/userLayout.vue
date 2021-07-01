@@ -7,11 +7,12 @@
       <b-dropdown variant="link" menu-class="admin__name-menu" toggle-class="admin__name-wrapper">
         <template #button-content>
           <div class="admin__name">
-            <!-- {{getAdminName}} -->
-            ۰۹۱۸۷۷۰۷۱۲۶
+            {{mobile}}
           </div>
         </template>
         <!-- <b-dropdown-item href="#" v-b-modal.modal-archive>آرشیو</b-dropdown-item> -->
+        <b-dropdown-item href="#" disabled>پروفایل</b-dropdown-item>
+        <b-dropdown-item href="#" @click="goToPurchase">تمدید اشتراک</b-dropdown-item>
         <b-dropdown-item href="#" @click="logout">خروج</b-dropdown-item>
       </b-dropdown>
     </div>
@@ -35,12 +36,12 @@ import { mapActions, mapGetters } from 'vuex'
 export default {
   data() {
     return {
-      adminName: null,
+      mobile: null,
     }
   },
   computed: {
     ...mapGetters([
-      // 'getAdminName'
+      'getMobile'
     ])
   },
   methods: {
@@ -52,10 +53,13 @@ export default {
       this.logoutUser();
       this.$router.push('/');
     },
+    goToPurchase() {
+      this.$router.push('/user/purchase');
+    },
   },
   async mounted() {
-    if(this.getAdminName) {
-      this.adminName = this.getAdminName;
+    if(this.getMobile) {
+      this.mobile = this.getMobile;
     }
   },
   async created() {
@@ -67,6 +71,8 @@ export default {
 
 
 <style lang="scss">
+@import '~/assets/scss/partials/_variables';
+
 html {
   font-family:
     'Source Sans Pro',
@@ -99,7 +105,7 @@ body {
 }
 
 .admin-page {
-  background-color: #f9f9f9;
+  // background-color: #f9f9f9;
   min-height: 100vh;
   height: 100%;
 }
@@ -122,13 +128,14 @@ body {
   &__navbar {
     display: flex;
     justify-content: space-between;
-    padding: 8px 24px;
+    padding: 0px 24px;
     background-color: #fff;
-    box-shadow: 0px 0px 8px 4px #e4e4e4;
+    // box-shadow: 0px 0px 8px 4px #e4e4e4;
     font-weight: 400;
     margin-bottom: 48px;
     align-items: center;
-    box-shadow: 5px 10px 20px 0 rgba(0, 0, 0, 0.09);
+    // box-shadow: 5px 10px 20px 0 rgba(0, 0, 0, 0.09);
+    height: 64px;
   }
 
   &__name {
@@ -156,7 +163,7 @@ body {
       
       a {
         &:active {
-          background-color: #fdbc11;
+          background-color: $blue-color;
         }
       }
     }

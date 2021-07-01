@@ -181,11 +181,19 @@
               </div>
               <div class="price__amount">
                 <div class="price__amount--number">
-                  {{plan.value.price == 0 ? 'رایگان' : formatPrice(plan.value.price)}}
+                  <div v-if="plan.value.price == 0">
+                    رایگان
+                  </div>
+                  <div v-else>
+                    {{formatPrice(plan.value.price)}}
+                    <span class="price__amount--currency">
+                      تومان
+                    </span>
+                  </div>
                 </div>
               </div>
               <div class="price__choose">
-                <button class="price__choose--button">
+                <button class="price__choose--button" @click="choosePlan(plan.value.planId)">
                   انتخاب
                 </button>
               </div>
@@ -256,7 +264,7 @@
                   <img src="~/assets/images/email.svg" alt="">
                 </div>
                 <div class="footer__contact--label">
-                  info@vFind.ir
+                  vfind1400@gmail.com
                 </div>
               </div>
               <div class="footer__contact--socials">
@@ -265,18 +273,9 @@
                     <img src="~/assets/images/instagram.svg" alt="">
                   </a>
                 </div>
-                <!-- <div class="footer__contact--social">
-                  <a href=""></a target="_blank">
-                  <img src="~/assets/images/linkedin.svg" alt="">
-                </div> -->
                 <div class="footer__contact--social">
-                  <a href="" target="_blank">
-                    <img src="~/assets/images/whatsapp.svg" rel="noreferrer" alt="">
-                  </a>
-                </div>
-                <div class="footer__contact--social">
-                  <a href="https://t.me/v_find" target="_blank">
-                    <img src="~/assets/images/telegram.svg" rel="noreferrer" alt="">
+                  <a href="https://t.me/v_find" target="_blank" rel="noreferrer">
+                    <img src="~/assets/images/telegram.svg" alt="">
                   </a>
                 </div>
               </div>
@@ -284,17 +283,17 @@
           </div>
           <div class="col-12 col-md-3">
             <div class="footer__left">
-              <div class="footer__download">
+              <!-- <div class="footer__download">
                 <div class="footer__download--icon">
-                  X
+                    <img src="~/assets/images/download.svg" alt="">
                 </div>
                 <div class="footer__download--label">
                   دانلود نسخه وب
                 </div>
-              </div>
-              <div class="footer__namad">
-                <img src="~/assets/images/namad.png" alt="">
-              </div>
+              </div> -->
+              <!-- <div id="namad_zarinpal" class="footer__namad" @click="checkZarinpal">
+                <img src="https://cdn.zarinpal.com/badges/trustLogo/1.svg" alt="">
+              </div> -->
             </div>
           </div>
         </div>
@@ -547,7 +546,7 @@ export default {
         {
           id: 4,
           question: 'اگه سوالی یا مشکلی در مورد وی‌فایند برام پیش اومد چیکار کنم؟ آیا کسی جواب گو هست؟',
-          answer: 'بله. در صورت وجود هرگونه سوال یا مشکلی می تونید از طریق پشتیبانی آنلاین، واتساپ، گروه تلگرام، کانال اینستگرام یا ایمیل، اقدام به مطرح کردن سوال یا مشکلتون بکنید تا تو کمترین زمان بررسی بشه',
+          answer: 'بله. در صورت وجود هرگونه سوال یا مشکلی می تونید از طریق پشتیبانی آنلاین (پایین، سمت راست صفحه)، گروه تلگرام، کانال اینستگرام یا ایمیل، اقدام به مطرح کردن سوال یا مشکلتون بکنید تا تو کمترین زمان بررسی بشه',
           isOpen: false,
         },
         {
@@ -559,13 +558,13 @@ export default {
         {
           id: 6,
           question: 'چطور ازش استفاده کنیم؟',
-          answer: 'بعد از ثبت نام، از طریق بخش ورود وارد پنل خودتون میشین. تو کادری که در نظر گرفته شده سوالتون رو وارد کنید، درس مورد نظرتون رو انتخاب کنید و جستجو بزنید. اگه درسی انتخاب نکنید سوالتون از بین همه کتاب های درسی جستجو میشه',
+          answer: 'بعد از ثبت نام، وارد پنل وی‌فایند میشید.  اگر اولین ورودتون هست پلن مورد نظرتون رو انتخاب کنید. بعد از ثبت پلن و پرداخت، به صفحه جستجو برگردید. تو کادری که در نظر گرفته شده سوالتون رو وارد کنید، درس مورد نظرتون رو انتخاب کنید و جستجو بزنید. اگه درسی انتخاب نکنید سوالتون از بین همه کتاب های درسی جستجو میشه',
           isOpen: false,
         },
         {
           id: 7,
-          question: 'آیا می تونیم اول امتحانش کنیم بعد پولشو بدیم؟',
-          answer: 'بله. می تونید اول دمو رو که رایگان هست انتخاب بکنید تا جستجوی رایگان ۵۰ سوال بهتون هدیه داده بشه. اینجوری می تونید اول وی‌‌فایند رو تست کنید، بعد که از کارکردش مطمئن شدید پلنمورد نظرتون رو انتخاب کنید',
+          question: 'آیا می تونم اول امتحانش کنم بعد پولشو بدم؟',
+          answer: 'بله. می تونید اول پلن دمو رو که رایگان هست انتخاب کنید تا جستجوی رایگان ۱۵ سوال بهتون هدیه داده بشه. اینجوری می تونید اول وی‌‌فایند رو تست کنید، بعد که از کارکردش مطمئن شدید پلن مورد نظرتون رو انتخاب کنید',
           isOpen: false,
         },
         {
@@ -583,7 +582,7 @@ export default {
         {
           id: 11,
           question: 'آیا محدودیتی تو تعداد سوال هایی که می پرسم هست؟',
-          answer: 'فقط در نسخه دمو که برای تست هست تعداد ۵۰ سوال جستجو در نظر گرفته شده. در پلن های ۱ هفته ای و۱ ماهه هیچ محدودیتی برای جستجوی تعداد سوال وجود نداره',
+          answer: 'در نسخه دمو که برای تست کردن سیستم هست تعداد ۱۵ سوال جستجو در نظر گرفته شده. در پلن های ۱ هفته ای و ۱ ماهه به ازای هر روز، ۱۰۰۰ سوال در نظر گرفته شده. جمعا ۷,۰۰۰ سوال برای پلن یک هفته ای و ۳۰,۰۰۰ سوال برای پلن یک ماهه وجود داره',
           isOpen: false,
         },
         {
@@ -609,6 +608,7 @@ export default {
       'verifyUser',
       'loginUser',
       'verifyUserLogin',
+      'setActivePlan',
     ]),
     openRegisterModal() {
       this.$refs['modal-register'].show();
@@ -637,9 +637,10 @@ export default {
         return false;
       }
 
-      let regex = new RegExp('09(1[0-9]|3[1-9]|2[1-9])-?[0-9]{3}-?[0-9]{4}');
-      let isPhone = regex.test(this.registerPhoneNumber);
-      if (isPhone && this.registerPhoneNumber.length == 11) {
+      // let regex = new RegExp('09(1[0-9]|3[1-9]|2[1-9])-?[0-9]{3}-?[0-9]{4}');
+      // let isPhone = regex.test(this.registerPhoneNumber);
+      // if (isPhone && this.registerPhoneNumber.length == 11) {
+      if (this.registerPhoneNumber.length == 11) {
         this.isRegisterPhoneNumberInvalid = false;
         return true;
       } else {
@@ -653,9 +654,11 @@ export default {
         return false;
       }
 
-      let regex = new RegExp('09(1[0-9]|3[1-9]|2[1-9])-?[0-9]{3}-?[0-9]{4}');
-      let isPhone = regex.test(this.loginPhoneNumber);
-      if (isPhone && this.loginPhoneNumber.length == 11) {
+      /* CHECK REGEX FOR "ALL" TYPE OF NUMBERS */
+      // let regex = new RegExp('09(1[0-9]|3[1-9]|2[1-9])-?[0-9]{3}-?[0-9]{4}');
+      // let isPhone = regex.test(this.loginPhoneNumber);
+      // if (isPhone && this.loginPhoneNumber.length == 11) {
+      if (this.loginPhoneNumber.length == 11) {
         this.isLoginPhoneNumberInvalid = false;
         return true;
       } else {
@@ -801,8 +804,12 @@ export default {
         codesms: this.registerVerificationCode,
       }
       let result = await this.verifyUser(params);
-      if (result) {
-        this.$router.push('/user');
+      if (result.status) {
+        if (!result.isPaid) {
+          this.$router.push('/user/purchase');
+        } else {
+          this.$router.push('/user');
+        }
       }
     },
     async verifyLogin() {
@@ -814,8 +821,12 @@ export default {
         codesms: this.loginVerificationCode,
       }
       let result = await this.verifyUserLogin(params);
-      if (result) {
-        this.$router.push('/user');
+      if (result.status) {
+        if (!result.isPaid) {
+          this.$router.push('/user/purchase');
+        } else {
+          this.$router.push('/user');
+        }
       }
     },
     registerCountdown(isStarted) {
@@ -866,7 +877,13 @@ export default {
       this.isLoginSubmited = false;
       this.isLoginVerifyCountdownStarted = false;
     },
-
+    choosePlan(planId) {
+      this.setActivePlan(planId);
+      this.$refs['modal-register'].show();
+    },
+    checkZarinpal() {
+      window.open("https://www.zarinpal.com/trustPage/"+window.location.hostname, null, "width=450, height=600, scrollbars=no, resizable=no");
+    },
   },
   async created () {
     },
@@ -1230,7 +1247,7 @@ export default {
     border-radius: 12px;
     box-shadow: 0 2px 24px -18px #1893fe;
     background-color: #fff;
-    margin: 32px 48px;
+    margin: 32px;
 
     &:last-child {
       margin-bottom: 0;
@@ -1489,6 +1506,7 @@ export default {
     
     &--icon {
       margin-left: 8px;
+      width: 32px;
     }
 
     &--label {
@@ -1497,10 +1515,11 @@ export default {
   }
 
   &__namad {
-    background-color: #F4F4F4;
+    // background-color: #F4F4F4;
     border-radius: 6px;
-    max-width: 250px;
+    max-width: 120px;
     width: 100%;
+    cursor: pointer;
   }
 
 }

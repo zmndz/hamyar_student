@@ -1,6 +1,6 @@
 import axios from 'axios'
 export default function(ctx) {
-  let { app, $axios, redirect, store, route } = ctx
+  let { app, $axios, redirect, store, route, $router, $toast } = ctx
   
   $axios.onRequest(
     (config) => {
@@ -47,12 +47,21 @@ export default function(ctx) {
       }
     },
     (error) => {
+      
+
       // Promise.reject({ meta: error, data: null });
     }
   )
 
   $axios.onResponse((res) => {
-    // console.log("response", res)
+    if (res.data.meta.code == 405){
+      $toast.error(
+        'لطفا دوباره وارد شوید'
+      )
+      localStorage.clear();
+      return redirect('302', '/')
+    }
+
   })
 
   $axios.onError(async error => {

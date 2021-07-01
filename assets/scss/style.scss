@@ -162,7 +162,7 @@ button {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #fdbc11;
+  background: $blue-color;
   margin: -4px 0 0 -4px;
 }
 .lds-roller div:nth-child(1) {
@@ -232,7 +232,7 @@ button {
 
 // Loading indicator end
 
-.text__highlight {
+.vfind__highlight {
   background-color: rgb(253, 197, 43) !important;
   border-radius: 4px !important;
   transition: background-color 0.1s ease-in-out;
@@ -252,4 +252,15 @@ button {
   padding: 4px;
   border-radius: 4px;
   cursor: pointer;
+}
+
+
+// because of v-html stuff
+
+table img {
+  width: auto;
+}
+
+.single-result__content img {
+  width: auto;
 }
