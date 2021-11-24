@@ -1,4 +1,8 @@
-# lumin_exams
+# vFind
+
+vFind is a search engine for students that helps them find any kind of question they have during exams or assignments.
+The vFind search engine uses a large database of books and classified questions from junior high and senior high schools as well as advanced algorithms to find the answer.
+
 
 ## Build Setup
 
